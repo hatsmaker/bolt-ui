@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.9126651d.chunk.css",
-    "main.js": "/static/js/main.f8465b53.chunk.js",
-    "main.js.map": "/static/js/main.f8465b53.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.88d592a7.js",
-    "runtime-main.js.map": "/static/js/runtime-main.88d592a7.js.map",
-    "static/css/2.af3c1da9.chunk.css": "/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.6db7cab6.chunk.js": "/static/js/2.6db7cab6.chunk.js",
-    "static/js/2.6db7cab6.chunk.js.map": "/static/js/2.6db7cab6.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.011b535a412c4ab0f4a37ea990f775d8.js": "/precache-manifest.011b535a412c4ab0f4a37ea990f775d8.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.af3c1da9.chunk.css.map": "/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.9126651d.chunk.css.map": "/static/css/main.9126651d.chunk.css.map",
-    "static/js/2.6db7cab6.chunk.js.LICENSE.txt": "/static/js/2.6db7cab6.chunk.js.LICENSE.txt",
-    "static/media/fonts.css": "/static/media/arnamu_bb.e35c7e57.woff2"
+    "main.css": "/hatsagortsyan12/hatsagortsyan12.github.io.git/static/css/main.6a87441c.chunk.css",
+    "main.js": "/hatsagortsyan12/hatsagortsyan12.github.io.git/static/js/main.63a456e3.chunk.js",
+    "main.js.map": "/hatsagortsyan12/hatsagortsyan12.github.io.git/static/js/main.63a456e3.chunk.js.map",
+    "runtime-main.js": "/hatsagortsyan12/hatsagortsyan12.github.io.git/static/js/runtime-main.d3f67e20.js",
+    "runtime-main.js.map": "/hatsagortsyan12/hatsagortsyan12.github.io.git/static/js/runtime-main.d3f67e20.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/hatsagortsyan12/hatsagortsyan12.github.io.git/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.80bdd03b.chunk.js": "/hatsagortsyan12/hatsagortsyan12.github.io.git/static/js/2.80bdd03b.chunk.js",
+    "static/js/2.80bdd03b.chunk.js.map": "/hatsagortsyan12/hatsagortsyan12.github.io.git/static/js/2.80bdd03b.chunk.js.map",
+    "index.html": "/hatsagortsyan12/hatsagortsyan12.github.io.git/index.html",
+    "precache-manifest.30dd36c308c407514a0f5ebc86de77d5.js": "/hatsagortsyan12/hatsagortsyan12.github.io.git/precache-manifest.30dd36c308c407514a0f5ebc86de77d5.js",
+    "service-worker.js": "/hatsagortsyan12/hatsagortsyan12.github.io.git/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/hatsagortsyan12/hatsagortsyan12.github.io.git/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.6a87441c.chunk.css.map": "/hatsagortsyan12/hatsagortsyan12.github.io.git/static/css/main.6a87441c.chunk.css.map",
+    "static/js/2.80bdd03b.chunk.js.LICENSE.txt": "/hatsagortsyan12/hatsagortsyan12.github.io.git/static/js/2.80bdd03b.chunk.js.LICENSE.txt",
+    "static/media/fonts.css": "/hatsagortsyan12/hatsagortsyan12.github.io.git/static/media/arnamu_bb.e35c7e57.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.88d592a7.js",
+    "static/js/runtime-main.d3f67e20.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.6db7cab6.chunk.js",
-    "static/css/main.9126651d.chunk.css",
-    "static/js/main.f8465b53.chunk.js"
+    "static/js/2.80bdd03b.chunk.js",
+    "static/css/main.6a87441c.chunk.css",
+    "static/js/main.63a456e3.chunk.js"
   ]
 }
