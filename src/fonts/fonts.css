@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'arian';
+    src: url('./arnamu_bb.woff2') format('woff2'),
+    url('./arnamu_b.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
