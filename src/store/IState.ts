@@ -1,3 +1,6 @@
+import {ITransferHistory} from "../shared/models/ITransferHistory";
+
 export interface IState {
-    remaining: number
+    remaining: number,
+    transferHistories: ITransferHistory[]
 }

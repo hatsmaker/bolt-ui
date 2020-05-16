@@ -1,7 +1,13 @@
 @font-face {
-    font-family: 'arian';
-    src: url('./arnamu_bb.woff2') format('woff2'),
-    url('./arnamu_b.woff') format('woff');
+    font-family: 'arian-amu';
+    src: url('Arian-AMU_v1.woff2') format("woff2"),url('Arian-AMU_v1.woff2') format("woff");
     font-weight: normal;
-    font-style: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'mardoto-b';
+    src: url('./mardoto/Mardoto-Bold.woff2') format("woff2"), url('./mardoto/Mardoto-Bold.woff2') format("woff");
+    font-weight: normal;
+    font-style: normal
 }

@@ -1,18 +1,33 @@
 import * as React from "react";
 import {Button, Form} from "react-bootstrap";
 import {css} from "emotion";
-import {useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
+import {inputClass, lgMarginBottomClass, mainBtnClass} from "./styleHelper/mainStyles";
+import {TitleComponent} from "./shared/TitleComponent";
+import {WithNamespaces, withNamespaces} from 'react-i18next';
+
+const loginWrapperClass = css`
+    padding-top: 50px;
+`
 
 const forgotPassClass = css`
     display: block;
-    text-decoration: underline;
     margin-top: 17px;
+    text-align: right;
 `
 
+const loginFormClass = css`
+    text-align: center;
+`
 
-export const LoginComponent: React.FunctionComponent = () => {
+const loginBtnClass = css`
+    margin-top: 50px;
+`
+
+export const Login: React.FunctionComponent<WithNamespaces> = React.memo((props) => {
     const history = useHistory();
     const [validated, setValidated] = React.useState(false)
+
 
     const onSubmitHandler = (): void => {
         setValidated(true)
@@ -20,24 +35,31 @@ export const LoginComponent: React.FunctionComponent = () => {
     }
 
     return (
-        <Form noValidate validated={validated}>
-            <Form.Group controlId="validationCustom01">
-                <Form.Label>First name</Form.Label>
-                <Form.Control
-                    required
-                    type="text"
-                    placeholder="First name"
-                    defaultValue="Mark"
-                />
-            </Form.Group>
+        <div className={loginWrapperClass}>
+            <TitleComponent>
+                Մուտք գործել
+                <p>Մուտքագրեք Ձեր ԲՈԼՏ - ի տվյալները մուտք գործելու համար</p>
+            </TitleComponent>
 
-            <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control required type="password" placeholder="Password"/>
-            </Form.Group>
+            <Form className={loginFormClass} noValidate validated={validated}>
+                <Form.Group controlId="validationCustom01">
+                    <Form.Control className={inputClass}
+                                  required
+                                  type="text"
+                                  placeholder="Անուն"
+                    />
+                </Form.Group>
 
-            <Button type="button" onClick={onSubmitHandler}>Submit form</Button>
-            <a href="#" className={forgotPassClass}>Մոռացել եմ գաղտնաբարը</a>
-        </Form>
+                <Form.Group className={lgMarginBottomClass} controlId="formBasicPassword">
+                    <Form.Control className={inputClass} required type="password" placeholder="Գաղտնաբառ"/>
+                </Form.Group>
+
+                <a href="#" className={forgotPassClass}>Մոռացել եմ գաղտնաբարը</a>
+
+                <Button className={`${mainBtnClass} ${loginBtnClass}`} type="button" onClick={onSubmitHandler}>Մուտք</Button>
+            </Form>
+        </div>
     );
-}
+})
+
+export const LoginComponent =  withNamespaces()(Login);

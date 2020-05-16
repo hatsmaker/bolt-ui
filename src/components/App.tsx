@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {css, injectGlobal} from 'emotion'
+import {css} from 'emotion'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {LoginComponent} from "./LoginComponent";
 import {Container} from "react-bootstrap";
@@ -9,27 +9,26 @@ import {IAction, reducer} from "../store/reducer";
 import {MenuComponent} from "./MenuComponent";
 import '../fonts/fonts.css'
 import {TransferComponent} from "./TransferComponent";
+import {TransferHistoryComponent} from "./TransferHistoryComponent";
+import {HeaderComponent} from "./HeaderComponent";
+import { withNamespaces } from 'react-i18next';
 
-injectGlobal`
-
-
-    body {
-        font-family: "arian";
-    }
+const containerClass = css`
+    height: 100vh;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    max-width: 480px;
 `
 
-const mainClass = css`
-    @media(min-width: 420px) {
-        width: 70%;
-        margin: 0 auto;l
-    }
-`;
-
 const initialState: IState = {
-    remaining: 500
+    remaining: 55550,
+    transferHistories: [{amount: 5600, date: '02/03/2020'}, {amount: 600, date: '02/03/2020'}, {
+        amount: 16200,
+        date: '02/03/2020'
+    }]
 }
 
-export const StateContext = React.createContext<{ state: IState, dispatch: React.Dispatch<IAction> | any}>(
+export const StateContext = React.createContext<{ state: IState, dispatch: React.Dispatch<IAction> | any }>(
     {state: initialState, dispatch: null}
 )
 
@@ -38,10 +37,12 @@ const App: React.FunctionComponent = () => {
 
     return (
         <StateContext.Provider value={{state, dispatch: dispatch!}}>
-            <Container>
+            <Container className={containerClass}>
                 <Router>
+                    <HeaderComponent/>
+
                     <Switch>
-                        <Route exact path="/">
+                        <Route exact strict path="/">
                             <LoginComponent/>
                         </Route>
                         <Route exact path="/menu">
@@ -50,6 +51,9 @@ const App: React.FunctionComponent = () => {
                         <Route exact path="/transfer">
                             <TransferComponent/>
                         </Route>
+                        <Route exact path="/transfer-history">
+                            <TransferHistoryComponent/>
+                        </Route>
                     </Switch>
                 </Router>
             </Container>
@@ -57,4 +61,4 @@ const App: React.FunctionComponent = () => {
     );
 }
 
-export default App;
+export default withNamespaces()(App);

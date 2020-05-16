@@ -1,45 +1,63 @@
 import * as React from "react";
 import {css} from "emotion";
 import {StateContext} from './App';
-import {SET_REMAINING} from "../store/actions";
-import {useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
+import {TitleComponent} from "./shared/TitleComponent";
+import {Button} from "react-bootstrap";
+import {secondaryBtnClass} from "./styleHelper/mainStyles";
+import {FaDollarSign, FaHistory} from 'react-icons/fa';
+import {formatter} from "../shared/helpers/formatter";
 
 const menuClass = css`
     
 `
 
-const menuItemClass = css`
-    
-`
-
-const remainingClass = css`
-    padding: 10px;
-    
-    span {
-        display: block;
+const menuItemClass = css`    
+    & + & {
+        margin-top: 15px;
     }
 `
 
+const remainingClass = css`
+    font-size: 1.3rem;
+    display: block;
+`
+
+const menuItemIconsClass = css`
+    margin-right: 4%;
+`
+
+const currencyClass = css`
+    text-transform: lowercase;
+    font-size: 18px;
+`
+
 export const MenuComponent: React.FunctionComponent = React.memo(props => {
-    const {state, dispatch} = React.useContext(StateContext);
+    const {state} = React.useContext(StateContext);
     const history = useHistory()
 
     const redirectToTransferPage = () => {
         history.push('./transfer')
     }
 
+    const redirectToTransferHistoryPage = () => {
+        history.push('./transfer-history')
+    }
+
     return <div className={menuClass}>
-        <div className={remainingClass}>
-            <span>{state.remaining}դր</span>
-            Հաշվի մնացորդ
-        </div>
+        <TitleComponent secondary>
+            {formatter(state.remaining)}<span className={currencyClass}>դր</span>
+            <p className={remainingClass}>Ձեր հաշվի մնացորդ</p>
+        </TitleComponent>
 
-        <div className={menuItemClass} onClick={redirectToTransferPage}>
-            Փոխանցում հասանելի գումար
-        </div>
+        <Button className={`${menuItemClass} ${secondaryBtnClass}`} onClick={redirectToTransferPage}>
+            <FaDollarSign className={menuItemIconsClass}/>
+            Փոխանցում հասանելի գումարը
+        </Button>
 
-        <div className={menuItemClass}>
+        <Button className={`${menuItemClass} ${secondaryBtnClass}`} onClick={redirectToTransferHistoryPage}>
+            <FaHistory className={menuItemIconsClass}/>
             Փոխանցումների պատմություն
-        </div>
+        </Button>
     </div>
 })
